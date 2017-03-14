@@ -18,6 +18,7 @@ public class RentalPart {
 
 	private Label rentedObjectLabel, customerLabel;
 	private Group grpDatesDeLocation;
+	private Label label, label_1;
 	
 	@PostConstruct
 	public void createUI(Composite parent) {
@@ -69,5 +70,7 @@ public class RentalPart {
 	public void setRental(Rental r) {
 		rentedObjectLabel.setText(r.getRentedObject().getName());
 		customerLabel.setText(r.getCustomer().getDisplayName());
+		label.setText(r.getStartDate().toString());
+		label_1.setText(r.getEndDate().toString());
 	}
 }
