@@ -3,8 +3,11 @@ package com.sii.rental.ui.views;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
 
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -74,9 +77,16 @@ public class RentalPart {
 	}
 	
 	public void setRental(Rental r) {
-		rentedObjectLabel.setText(r.getRentedObject().getName());
-		customerLabel.setText(r.getCustomer().getDisplayName());
-		label.setText(r.getStartDate().toString());
-		label_1.setText(r.getEndDate().toString());
+		if(rentedObjectLabel != null) {
+			rentedObjectLabel.setText(r.getRentedObject().getName());
+			customerLabel.setText(r.getCustomer().getDisplayName());
+			label.setText(r.getStartDate().toString());
+			label_1.setText(r.getEndDate().toString());
+		}
+	}
+	
+	@Inject @Optional
+	public void receiveSelection(@Named(IServiceConstants.ACTIVE_SELECTION)Rental r) {
+		setRental(r);
 	}
 }
