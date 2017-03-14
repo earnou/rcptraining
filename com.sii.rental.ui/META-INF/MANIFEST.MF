@@ -8,10 +8,12 @@ Bundle-Vendor: SII
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jface;bundle-version="3.13.0",
  com.sii.rental.core;bundle-version="1.0.0",
- org.eclipse.e4.ui.di
+ org.eclipse.e4.ui.di,
+ org.eclipse.e4.ui.workbench
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
- javax.inject;version="1.0.0"
+ javax.inject;version="1.0.0",
+ org.eclipse.e4.core.contexts
 Bundle-ActivationPolicy: lazy
 Export-Package: com.sii.rental.ui,
  com.sii.rental.ui.views

@@ -2,8 +2,10 @@
 package com.sii.rental.ui.views;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -12,7 +14,7 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
 import com.opcoach.training.rental.Rental;
-import com.sii.rental.core.RentalCoreActivator;
+import com.opcoach.training.rental.RentalAgency;
 
 public class RentalPart {
 
@@ -20,8 +22,11 @@ public class RentalPart {
 	private Group grpDatesDeLocation;
 	private Label label, label_1;
 	
+	@Inject
+	private ESelectionService e;
+	
 	@PostConstruct
-	public void createUI(Composite parent) {
+	public void createUI(Composite parent, RentalAgency a) {
 		parent.setLayout(new GridLayout(1, false));
 		
 		Group infoGroup = new Group(parent, SWT.NONE);
@@ -48,19 +53,20 @@ public class RentalPart {
 		Label lblDu = new Label(grpDatesDeLocation, SWT.NONE);
 		lblDu.setText("du: ");
 		
-		Label label = new Label(grpDatesDeLocation, SWT.NONE);
+		 label = new Label(grpDatesDeLocation, SWT.NONE);
 		label.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		label.setText("15/03/2011");
 		
 		Label lblAu = new Label(grpDatesDeLocation, SWT.NONE);
 		lblAu.setText("au:");
 		
-		Label label_1 = new Label(grpDatesDeLocation, SWT.NONE);
+		 label_1 = new Label(grpDatesDeLocation, SWT.NONE);
 		label_1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		label_1.setText("22/03/2011");
 		
-		setRental(RentalCoreActivator.getAgency().getRentals().get(0));
+		setRental(a.getRentals().get(0));
 	}
+	
 
 	@Focus
 	public void onFocus() {
