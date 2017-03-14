@@ -20,5 +20,7 @@ public class RentalAgencies {
 		Collection<RentalAgency> agencies = new ArrayList<>();
 		agencies.add(a);
 		tv.setInput(agencies);
+		
+		tv.expandAll();
 	}
 }
