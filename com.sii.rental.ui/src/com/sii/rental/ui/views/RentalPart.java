@@ -17,6 +17,7 @@ import com.sii.rental.core.RentalCoreActivator;
 public class RentalPart {
 
 	private Label rentedObjectLabel, customerLabel;
+	private Group grpDatesDeLocation;
 	
 	@PostConstruct
 	public void createUI(Composite parent) {
@@ -36,7 +37,26 @@ public class RentalPart {
 		l.setText("Loué à:");
 		
 		customerLabel =  new Label(infoGroup, SWT.BORDER);
-		customerLabel.setText("ohn Wayne");
+		customerLabel.setText("John Wayne");
+		
+		grpDatesDeLocation = new Group(parent, SWT.NONE);
+		grpDatesDeLocation.setLayout(new GridLayout(2, false));
+		grpDatesDeLocation.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		grpDatesDeLocation.setText("Dates de location");
+		
+		Label lblDu = new Label(grpDatesDeLocation, SWT.NONE);
+		lblDu.setText("du: ");
+		
+		Label label = new Label(grpDatesDeLocation, SWT.NONE);
+		label.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		label.setText("15/03/2011");
+		
+		Label lblAu = new Label(grpDatesDeLocation, SWT.NONE);
+		lblAu.setText("au:");
+		
+		Label label_1 = new Label(grpDatesDeLocation, SWT.NONE);
+		label_1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		label_1.setText("22/03/2011");
 		
 		setRental(RentalCoreActivator.getAgency().getRentals().get(0));
 	}
@@ -50,6 +70,4 @@ public class RentalPart {
 		rentedObjectLabel.setText(r.getRentedObject().getName());
 		customerLabel.setText(r.getCustomer().getDisplayName());
 	}
-	
-
 }
