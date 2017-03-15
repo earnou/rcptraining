@@ -5,6 +5,7 @@ import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.RTFTransfer;
@@ -16,7 +17,7 @@ import com.opcoach.training.rental.Customer;
 
 public class copyHandler {	
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SELECTION) Customer custom) {
+	public void execute(@Named(IServiceConstants.ACTIVE_SELECTION) Customer custom, IEventBroker broker) {
 		Clipboard clipboard = new Clipboard(Display.getCurrent());
 		String textData = custom.getDisplayName();
 		String rtfData =  "{\\rtf1\\b\\i " + textData + "}";
@@ -26,6 +27,8 @@ public class copyHandler {
 		Object[] data = new Object[]{textData, rtfData};
 		clipboard.setContents(data, transfers);
 		clipboard.dispose();
+		
+		broker.send("copyCustomer", custom);
 	}
 	
 	@CanExecute
