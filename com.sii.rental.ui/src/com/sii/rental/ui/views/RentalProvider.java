@@ -5,16 +5,20 @@ import java.util.Collection;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
 
+import com.opcoach.e4.preferences.ScopedPreferenceStore;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
@@ -22,7 +26,12 @@ import com.opcoach.training.rental.RentalObject;
 import com.sii.rental.ui.RentalUIConstants;
 
 public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider, RentalUIConstants{
-
+	private IPreferenceStore ps;
+	
+	public RentalProvider() {
+		ps = new ScopedPreferenceStore(InstanceScope.INSTANCE, "com.sii.rental.ui");
+	}
+	
 	@Override
 	public Object[] getElements(Object inputElement) {
 		Object[] result = null;
@@ -111,16 +120,27 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	@Override
 	public Color getForeground(Object element) {
 		if(element instanceof Customer) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
+			return getAColor(ps.getString(PREF_CUSTOMER_COLOR));
 		}
 		else if(element instanceof Rental) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_MAGENTA);
+			return getAColor(ps.getString(PREF_RENTAL_COLOR));
 		}
 		else if(element instanceof RentalObject) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_GRAY);
+			return getAColor(ps.getString(PREF_RENTAL_OBJECT_COLOR));
 		}
 		
 		return null;
+	}
+	
+	private Color getAColor(String rgbKey)
+	{
+		ColorRegistry colorRegistry = JFaceResources.getColorRegistry();	
+		Color col = colorRegistry.get(rgbKey);
+		if(col == null) {
+			colorRegistry.put(rgbKey, StringConverter.asRGB(rgbKey));
+			col = colorRegistry.get(rgbKey);
+		}
+		return col;
 	}
 
 	@Override

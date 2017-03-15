@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -17,16 +18,18 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Composite;
 
 import com.opcoach.training.rental.RentalAgency;
+import com.sii.rental.ui.RentalUIConstants;
 
-public class RentalAgencies {
+public class RentalAgencies implements RentalUIConstants{
 	public static final String COM_SII_RENTAL_EAP_POPUPMENU_0 = "com.sii.rental.eap.popupmenu.0";
+	TreeViewer tv;
 
 	@Inject
 	private ESelectionService selectionService;
 	
 	@PostConstruct
 	public void createPartControl(Composite parent, RentalAgency a, IEclipseContext context, EMenuService menuService) {
-		TreeViewer tv = new TreeViewer(parent);
+		tv = new TreeViewer(parent);
 		tv.setContentProvider(ContextInjectionFactory.make(RentalProvider.class, context));
 		tv.setLabelProvider(ContextInjectionFactory.make(RentalProvider.class, context));
 		
@@ -44,8 +47,19 @@ public class RentalAgencies {
 		});
 		tv.expandAll();
 		
+		
 		menuService.registerContextMenu(tv.getControl(), COM_SII_RENTAL_EAP_POPUPMENU_0);
-	
+			
 	}
+	
+	@Inject
+	public void refreshTree(@Preference(value=PREF_CUSTOMER_COLOR) String custCol,
+		@Preference(value=PREF_RENTAL_COLOR) String rk,
+		@Preference(value=PREF_RENTAL_OBJECT_COLOR) String rok) {
+		if(tv!=null) {
+			tv.refresh();
+		}
+	}
+	
 
 }
