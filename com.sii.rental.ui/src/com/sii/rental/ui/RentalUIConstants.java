@@ -21,6 +21,7 @@ public interface RentalUIConstants {
 	public static final String PREF_CUSTOMER_COLOR = "customerColor";
 	public static final String PREF_RENTAL_COLOR = "rentalColor";
 	public static final String PREF_RENTAL_OBJECT_COLOR = "rentalObjectColor";
+	public static final String PALETTE_MANAGER = "paletteManager";
 	
 	// Nodes for providers
 	public static final String CUSTOMERS_NODE = "Clients";

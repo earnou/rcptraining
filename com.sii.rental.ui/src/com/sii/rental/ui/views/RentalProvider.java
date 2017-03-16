@@ -1,6 +1,7 @@
 package com.sii.rental.ui.views;
 
 import java.util.Collection;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -23,6 +24,7 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
+import com.sii.rental.ui.Palette;
 import com.sii.rental.ui.RentalUIConstants;
 
 public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider, RentalUIConstants{
@@ -154,37 +156,25 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		}
 		
 	}
-
+	@Inject @Named(PALETTE_MANAGER)
+	private Map<String, Palette> palettes;
 	@Override
 	public Color getForeground(Object element) {
-		if(element instanceof Customer) {
-			return getAColor(ps.getString(PREF_CUSTOMER_COLOR));
-		}
-		else if(element instanceof Rental) {
-			return getAColor(ps.getString(PREF_RENTAL_COLOR));
-		}
-		else if(element instanceof RentalObject) {
-			return getAColor(ps.getString(PREF_RENTAL_OBJECT_COLOR));
-		}
 		
-		return null;
+		String palId = ps.getString(PREF_PALETTE);
+		
+		Palette p = palettes.get(palId);
+		return p.getProvider().getForeground(element);
+		
 	}
 	
-	private Color getAColor(String rgbKey)
-	{
-		ColorRegistry colorRegistry = JFaceResources.getColorRegistry();	
-		Color col = colorRegistry.get(rgbKey);
-		if(col == null) {
-			colorRegistry.put(rgbKey, StringConverter.asRGB(rgbKey));
-			col = colorRegistry.get(rgbKey);
-		}
-		return col;
-	}
 
 	@Override
 	public Color getBackground(Object element) {
-		// TODO Auto-generated method stub
-		return null;
+		String palId = ps.getString(PREF_PALETTE);
+		
+		Palette p = palettes.get(palId);
+		return p.getProvider().getBackground(element);
 	}
 	
 	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
