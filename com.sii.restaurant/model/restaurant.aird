@@ -148,22 +148,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QTWYdgr7EeedPbzf_6ocBQ" id="(0.6903765690376569,1.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QTWYdwr7EeedPbzf_6ocBQ" id="(0.8333333333333334,0.0)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_BH66oAr8EeedPbzf_6ocBQ" type="4001" element="_BHtfQAr8EeedPbzf_6ocBQ" source="_sRKjoAr6EeedPbzf_6ocBQ" target="_c_PcQAr7EeedPbzf_6ocBQ">
-          <children xmi:type="notation:Node" xmi:id="_BH7hsAr8EeedPbzf_6ocBQ" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BH7hsQr8EeedPbzf_6ocBQ" x="6" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_BH7hsgr8EeedPbzf_6ocBQ" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BH7hswr8EeedPbzf_6ocBQ" x="-15" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_BH7htAr8EeedPbzf_6ocBQ" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BH7htQr8EeedPbzf_6ocBQ" x="-54"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_BH66oQr8EeedPbzf_6ocBQ" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_BH66ogr8EeedPbzf_6ocBQ" fontColor="7490599" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BH66owr8EeedPbzf_6ocBQ" points="[0, 0, -56, -182]$[121, 0, 65, -182]$[121, 133, 65, -49]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BH7htgr8EeedPbzf_6ocBQ" id="(1.0,0.7016129032258065)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BH7htwr8EeedPbzf_6ocBQ" id="(0.0,0.5)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_Me1vkAr8EeedPbzf_6ocBQ" type="4001" element="_MenGEAr8EeedPbzf_6ocBQ" source="_sRKjoAr6EeedPbzf_6ocBQ" target="_G93PwAr7EeedPbzf_6ocBQ">
           <children xmi:type="notation:Node" xmi:id="_Me1vlAr8EeedPbzf_6ocBQ" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Me1vlQr8EeedPbzf_6ocBQ" x="87" y="-9"/>
@@ -214,7 +198,7 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_sQcx8Ar6EeedPbzf_6ocBQ" name="Restaurant" tooltipText="" outgoingEdges="_FgyNwAr7EeedPbzf_6ocBQ _QTN1kAr7EeedPbzf_6ocBQ _BHtfQAr8EeedPbzf_6ocBQ _MenGEAr8EeedPbzf_6ocBQ" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_sQcx8Ar6EeedPbzf_6ocBQ" name="Restaurant" tooltipText="" outgoingEdges="_FgyNwAr7EeedPbzf_6ocBQ _QTN1kAr7EeedPbzf_6ocBQ _MenGEAr8EeedPbzf_6ocBQ" width="12" height="10">
       <target xmi:type="ecore:EClass" href="restaurant.ecore#//Restaurant"/>
       <semanticElements xmi:type="ecore:EClass" href="restaurant.ecore#//Restaurant"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_0Y8UUAsAEeedPbzf_6ocBQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
@@ -329,7 +313,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_c_Cn8Ar7EeedPbzf_6ocBQ" name="Clients" tooltipText="" incomingEdges="_BHtfQAr8EeedPbzf_6ocBQ _Kg1jEAsCEeedPbzf_6ocBQ" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_c_Cn8Ar7EeedPbzf_6ocBQ" name="Clients" tooltipText="" incomingEdges="_Kg1jEAsCEeedPbzf_6ocBQ" width="12" height="10">
       <target xmi:type="ecore:EClass" href="restaurant.ecore#//Clients"/>
       <semanticElements xmi:type="ecore:EClass" href="restaurant.ecore#//Clients"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -347,20 +331,6 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_BHtfQAr8EeedPbzf_6ocBQ" name="[0..1] client" sourceNode="_sQcx8Ar6EeedPbzf_6ocBQ" targetNode="_c_Cn8Ar7EeedPbzf_6ocBQ">
-      <target xmi:type="ecore:EReference" href="restaurant.ecore#//Restaurant/client"/>
-      <semanticElements xmi:type="ecore:EReference" href="restaurant.ecore#//Restaurant/client"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_BHuGUAr8EeedPbzf_6ocBQ" routingStyle="manhattan" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_BHuGUQr8EeedPbzf_6ocBQ" showIcon="false">
-          <customFeatures>labelSize</customFeatures>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_BHuGUgr8EeedPbzf_6ocBQ" showIcon="false" labelColor="39,76,114">
-          <customFeatures>labelSize</customFeatures>
-        </endLabelStyle>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_MenGEAr8EeedPbzf_6ocBQ" name="[0..*] salarié" sourceNode="_sQcx8Ar6EeedPbzf_6ocBQ" targetNode="_G9rCgAr7EeedPbzf_6ocBQ">
       <target xmi:type="ecore:EReference" href="restaurant.ecore#//Restaurant/salarié"/>
