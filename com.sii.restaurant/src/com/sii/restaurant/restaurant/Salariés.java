@@ -1,50 +1,12 @@
-/**
- */
 package com.sii.restaurant.restaurant;
 
-import org.eclipse.emf.ecore.EObject;
+// This interface overrides the generated interface and will be returned by factory
+public interface Salariés extends MSalariés
+{
+	// You can write additional methods using an empty default java 8 notation 
+	// because the generated implemented class extends this interface and is not abstract
+	//
+	// For instance : 
+	// default public void addSomething(Something foo) {} ;
 
-/**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Salariés</b></em>'.
- * <!-- end-user-doc -->
- *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link com.sii.restaurant.restaurant.Salariés#getName <em>Name</em>}</li>
- * </ul>
- *
- * @see com.sii.restaurant.restaurant.RestaurantPackage#getSalariés()
- * @model
- * @generated
- */
-public interface Salariés extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see com.sii.restaurant.restaurant.RestaurantPackage#getSalariés_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link com.sii.restaurant.restaurant.Salariés#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-} // Salariés
+}

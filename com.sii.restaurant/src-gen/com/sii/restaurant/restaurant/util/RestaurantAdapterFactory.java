@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see com.sii.restaurant.restaurant.RestaurantPackage
+ * @see com.sii.restaurant.restaurant.MRestaurantPackage
  * @generated
  */
 public class RestaurantAdapterFactory extends AdapterFactoryImpl {
@@ -26,7 +26,7 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static RestaurantPackage modelPackage;
+	protected static MRestaurantPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -36,7 +36,7 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 	 */
 	public RestaurantAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = RestaurantPackage.eINSTANCE;
+			modelPackage = MRestaurantPackage.eINSTANCE;
 		}
 	}
 
@@ -68,27 +68,27 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 	protected RestaurantSwitch<Adapter> modelSwitch =
 		new RestaurantSwitch<Adapter>() {
 			@Override
-			public Adapter caseRestaurant(Restaurant object) {
+			public Adapter caseRestaurant(MRestaurant object) {
 				return createRestaurantAdapter();
 			}
 			@Override
-			public Adapter caseMenus(Menus object) {
+			public Adapter caseMenus(MMenus object) {
 				return createMenusAdapter();
 			}
 			@Override
-			public Adapter caseSalariés(Salariés object) {
+			public Adapter caseSalariés(MSalariés object) {
 				return createSalariésAdapter();
 			}
 			@Override
-			public Adapter caseRéservations(Réservations object) {
+			public Adapter caseRéservations(MRéservations object) {
 				return createRéservationsAdapter();
 			}
 			@Override
-			public Adapter caseClients(Clients object) {
+			public Adapter caseClients(MClients object) {
 				return createClientsAdapter();
 			}
 			@Override
-			public Adapter casePlats(Plats object) {
+			public Adapter casePlats(MPlats object) {
 				return createPlatsAdapter();
 			}
 			@Override
@@ -112,13 +112,13 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.Restaurant <em>Restaurant</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.MRestaurant <em>Restaurant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.restaurant.restaurant.Restaurant
+	 * @see com.sii.restaurant.restaurant.MRestaurant
 	 * @generated
 	 */
 	public Adapter createRestaurantAdapter() {
@@ -126,13 +126,13 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.Menus <em>Menus</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.MMenus <em>Menus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.restaurant.restaurant.Menus
+	 * @see com.sii.restaurant.restaurant.MMenus
 	 * @generated
 	 */
 	public Adapter createMenusAdapter() {
@@ -140,13 +140,13 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.Salariés <em>Salariés</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.MSalariés <em>Salariés</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.restaurant.restaurant.Salariés
+	 * @see com.sii.restaurant.restaurant.MSalariés
 	 * @generated
 	 */
 	public Adapter createSalariésAdapter() {
@@ -154,13 +154,13 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.Réservations <em>Réservations</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.MRéservations <em>Réservations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.restaurant.restaurant.Réservations
+	 * @see com.sii.restaurant.restaurant.MRéservations
 	 * @generated
 	 */
 	public Adapter createRéservationsAdapter() {
@@ -168,13 +168,13 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.Clients <em>Clients</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.MClients <em>Clients</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.restaurant.restaurant.Clients
+	 * @see com.sii.restaurant.restaurant.MClients
 	 * @generated
 	 */
 	public Adapter createClientsAdapter() {
@@ -182,13 +182,13 @@ public class RestaurantAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.Plats <em>Plats</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.restaurant.restaurant.MPlats <em>Plats</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.restaurant.restaurant.Plats
+	 * @see com.sii.restaurant.restaurant.MPlats
 	 * @generated
 	 */
 	public Adapter createPlatsAdapter() {

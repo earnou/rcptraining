@@ -69,6 +69,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
+import com.sii.restaurant.restaurant.MRestaurantFactory;
+import com.sii.restaurant.restaurant.MRestaurantPackage;
 import com.sii.restaurant.restaurant.RestaurantFactory;
 import com.sii.restaurant.restaurant.RestaurantPackage;
 import com.sii.restaurant.restaurant.provider.RestaurantEditPlugin;
@@ -116,7 +118,7 @@ public class RestaurantModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RestaurantPackage restaurantPackage = RestaurantPackage.eINSTANCE;
+	protected MRestaurantPackage restaurantPackage = MRestaurantPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -124,7 +126,7 @@ public class RestaurantModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RestaurantFactory restaurantFactory = restaurantPackage.getRestaurantFactory();
+	protected MRestaurantFactory restaurantFactory = restaurantPackage.getRestaurantFactory();
 
 	/**
 	 * This is the file creation page.

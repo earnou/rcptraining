@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see com.sii.restaurant.restaurant.RestaurantPackage
+ * @see com.sii.restaurant.restaurant.MRestaurantPackage
  * @generated
  */
 public class RestaurantSwitch<T> extends Switch<T> {
@@ -29,7 +29,7 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static RestaurantPackage modelPackage;
+	protected static MRestaurantPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -39,7 +39,7 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	 */
 	public RestaurantSwitch() {
 		if (modelPackage == null) {
-			modelPackage = RestaurantPackage.eINSTANCE;
+			modelPackage = MRestaurantPackage.eINSTANCE;
 		}
 	}
 
@@ -66,38 +66,38 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case RestaurantPackage.RESTAURANT: {
-				Restaurant restaurant = (Restaurant)theEObject;
+			case MRestaurantPackage.RESTAURANT: {
+				MRestaurant restaurant = (MRestaurant)theEObject;
 				T result = caseRestaurant(restaurant);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RestaurantPackage.MENUS: {
-				Menus menus = (Menus)theEObject;
+			case MRestaurantPackage.MENUS: {
+				MMenus menus = (MMenus)theEObject;
 				T result = caseMenus(menus);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RestaurantPackage.SALARIÉS: {
-				Salariés salariés = (Salariés)theEObject;
+			case MRestaurantPackage.SALARIÉS: {
+				MSalariés salariés = (MSalariés)theEObject;
 				T result = caseSalariés(salariés);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RestaurantPackage.RÉSERVATIONS: {
-				Réservations réservations = (Réservations)theEObject;
+			case MRestaurantPackage.RÉSERVATIONS: {
+				MRéservations réservations = (MRéservations)theEObject;
 				T result = caseRéservations(réservations);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RestaurantPackage.CLIENTS: {
-				Clients clients = (Clients)theEObject;
+			case MRestaurantPackage.CLIENTS: {
+				MClients clients = (MClients)theEObject;
 				T result = caseClients(clients);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RestaurantPackage.PLATS: {
-				Plats plats = (Plats)theEObject;
+			case MRestaurantPackage.PLATS: {
+				MPlats plats = (MPlats)theEObject;
 				T result = casePlats(plats);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -117,7 +117,7 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRestaurant(Restaurant object) {
+	public T caseRestaurant(MRestaurant object) {
 		return null;
 	}
 
@@ -132,7 +132,7 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMenus(Menus object) {
+	public T caseMenus(MMenus object) {
 		return null;
 	}
 
@@ -147,7 +147,7 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSalariés(Salariés object) {
+	public T caseSalariés(MSalariés object) {
 		return null;
 	}
 
@@ -162,7 +162,7 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRéservations(Réservations object) {
+	public T caseRéservations(MRéservations object) {
 		return null;
 	}
 
@@ -177,7 +177,7 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseClients(Clients object) {
+	public T caseClients(MClients object) {
 		return null;
 	}
 
@@ -192,7 +192,7 @@ public class RestaurantSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlats(Plats object) {
+	public T casePlats(MPlats object) {
 		return null;
 	}
 

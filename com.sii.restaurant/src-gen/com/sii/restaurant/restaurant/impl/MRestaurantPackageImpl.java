@@ -2,22 +2,23 @@
  */
 package com.sii.restaurant.restaurant.impl;
 
-import com.sii.restaurant.restaurant.Clients;
-import com.sii.restaurant.restaurant.Menus;
-import com.sii.restaurant.restaurant.Plats;
-import com.sii.restaurant.restaurant.Restaurant;
-import com.sii.restaurant.restaurant.RestaurantFactory;
-import com.sii.restaurant.restaurant.RestaurantPackage;
-import com.sii.restaurant.restaurant.Réservations;
-import com.sii.restaurant.restaurant.Salariés;
+import com.sii.restaurant.restaurant.MClients;
+import com.sii.restaurant.restaurant.MMenus;
+import com.sii.restaurant.restaurant.MPlats;
+import com.sii.restaurant.restaurant.MRestaurant;
+import com.sii.restaurant.restaurant.MRestaurantFactory;
+import com.sii.restaurant.restaurant.MRestaurantPackage;
+import com.sii.restaurant.restaurant.MRéservations;
+import com.sii.restaurant.restaurant.MSalariés;
 
 import com.sii.restaurant.restaurant.util.RestaurantValidator;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -26,7 +27,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RestaurantPackageImpl extends EPackageImpl implements RestaurantPackage {
+public class MRestaurantPackageImpl extends EPackageImpl implements MRestaurantPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,12 +81,12 @@ public class RestaurantPackageImpl extends EPackageImpl implements RestaurantPac
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see com.sii.restaurant.restaurant.RestaurantPackage#eNS_URI
+	 * @see com.sii.restaurant.restaurant.MRestaurantPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private RestaurantPackageImpl() {
-		super(eNS_URI, RestaurantFactory.eINSTANCE);
+	private MRestaurantPackageImpl() {
+		super(eNS_URI, MRestaurantFactory.eINSTANCE);
 	}
 
 	/**
@@ -98,7 +99,7 @@ public class RestaurantPackageImpl extends EPackageImpl implements RestaurantPac
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link RestaurantPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link MRestaurantPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,11 +108,11 @@ public class RestaurantPackageImpl extends EPackageImpl implements RestaurantPac
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static RestaurantPackage init() {
-		if (isInited) return (RestaurantPackage)EPackage.Registry.INSTANCE.getEPackage(RestaurantPackage.eNS_URI);
+	public static MRestaurantPackage init() {
+		if (isInited) return (MRestaurantPackage)EPackage.Registry.INSTANCE.getEPackage(MRestaurantPackage.eNS_URI);
 
 		// Obtain or create and register package
-		RestaurantPackageImpl theRestaurantPackage = (RestaurantPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RestaurantPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RestaurantPackageImpl());
+		MRestaurantPackageImpl theRestaurantPackage = (MRestaurantPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MRestaurantPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MRestaurantPackageImpl());
 
 		isInited = true;
 
@@ -135,7 +136,7 @@ public class RestaurantPackageImpl extends EPackageImpl implements RestaurantPac
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(RestaurantPackage.eNS_URI, theRestaurantPackage);
+		EPackage.Registry.INSTANCE.put(MRestaurantPackage.eNS_URI, theRestaurantPackage);
 		return theRestaurantPackage;
 	}
 
@@ -315,8 +316,8 @@ public class RestaurantPackageImpl extends EPackageImpl implements RestaurantPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RestaurantFactory getRestaurantFactory() {
-		return (RestaurantFactory)getEFactoryInstance();
+	public MRestaurantFactory getRestaurantFactory() {
+		return (MRestaurantFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -394,30 +395,30 @@ public class RestaurantPackageImpl extends EPackageImpl implements RestaurantPac
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(restaurantEClass, Restaurant.class, "Restaurant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRestaurant_Menu(), this.getMenus(), null, "menu", null, 0, -1, Restaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRestaurant_Réservations(), this.getRéservations(), null, "Réservations", null, 0, -1, Restaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRestaurant_Salarié(), this.getSalariés(), null, "salarié", null, 0, -1, Restaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRestaurant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Restaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRestaurant_Address(), ecorePackage.getEString(), "address", null, 0, 1, Restaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(restaurantEClass, MRestaurant.class, "Restaurant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRestaurant_Menu(), this.getMenus(), null, "menu", null, 0, -1, MRestaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestaurant_Réservations(), this.getRéservations(), null, "Réservations", null, 0, -1, MRestaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRestaurant_Salarié(), this.getSalariés(), null, "salarié", null, 0, -1, MRestaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRestaurant_Name(), ecorePackage.getEString(), "name", null, 0, 1, MRestaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRestaurant_Address(), ecorePackage.getEString(), "address", null, 0, 1, MRestaurant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(menusEClass, Menus.class, "Menus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenus_Plat(), this.getPlats(), null, "plat", null, 0, -1, Menus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMenus_Name(), ecorePackage.getEString(), "name", null, 0, 1, Menus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(menusEClass, MMenus.class, "Menus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMenus_Plat(), this.getPlats(), null, "plat", null, 0, -1, MMenus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMenus_Name(), ecorePackage.getEString(), "name", null, 0, 1, MMenus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(salariésEClass, Salariés.class, "Salariés", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSalariés_Name(), ecorePackage.getEString(), "name", null, 0, 1, Salariés.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(salariésEClass, MSalariés.class, "Salariés", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSalariés_Name(), ecorePackage.getEString(), "name", null, 0, 1, MSalariés.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(réservationsEClass, Réservations.class, "Réservations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRéservations_Name(), ecorePackage.getEString(), "name", null, 0, 1, Réservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRéservations_Date(), ecorePackage.getEDate(), "date", null, 0, 1, Réservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRéservations_Clients(), this.getClients(), null, "clients", null, 0, -1, Réservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(réservationsEClass, MRéservations.class, "Réservations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRéservations_Name(), ecorePackage.getEString(), "name", null, 0, 1, MRéservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRéservations_Date(), ecorePackage.getEDate(), "date", null, 0, 1, MRéservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRéservations_Clients(), this.getClients(), null, "clients", null, 0, -1, MRéservations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(clientsEClass, Clients.class, "Clients", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClients_Name(), ecorePackage.getEString(), "name", null, 0, 1, Clients.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(clientsEClass, MClients.class, "Clients", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClients_Name(), ecorePackage.getEString(), "name", null, 0, 1, MClients.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(platsEClass, Plats.class, "Plats", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlats_Name(), ecorePackage.getEString(), "name", null, 0, 1, Plats.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(platsEClass, MPlats.class, "Plats", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPlats_Name(), ecorePackage.getEString(), "name", null, 0, 1, MPlats.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -443,4 +444,4 @@ public class RestaurantPackageImpl extends EPackageImpl implements RestaurantPac
 		   });
 	}
 
-} //RestaurantPackageImpl
+} //MRestaurantPackageImpl
