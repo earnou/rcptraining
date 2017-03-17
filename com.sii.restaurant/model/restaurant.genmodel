@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.sii.restaurant/src" modelPluginID="com.sii.restaurant"
+    modelName="Restaurant" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>restaurant.ecore</foreignModel>
+  <genPackages prefix="Restaurant" disposableProviderFactory="true" ecorePackage="restaurant.ecore#/">
+    <genClasses ecoreClass="restaurant.ecore#//Restaurant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restaurant.ecore#//Restaurant/menu"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restaurant.ecore#//Restaurant/Réservations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference restaurant.ecore#//Restaurant/client"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restaurant.ecore#//Restaurant/salarié"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restaurant.ecore#//Restaurant/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restaurant.ecore#//Restaurant/address"/>
+    </genClasses>
+    <genClasses ecoreClass="restaurant.ecore#//Menus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restaurant.ecore#//Menus/plat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restaurant.ecore#//Menus/name"/>
+    </genClasses>
+    <genClasses ecoreClass="restaurant.ecore#//Salariés">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restaurant.ecore#//Salariés/name"/>
+    </genClasses>
+    <genClasses ecoreClass="restaurant.ecore#//Réservations">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restaurant.ecore#//Réservations/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restaurant.ecore#//Réservations/date"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference restaurant.ecore#//Réservations/clients"/>
+    </genClasses>
+    <genClasses ecoreClass="restaurant.ecore#//Clients">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restaurant.ecore#//Clients/name"/>
+    </genClasses>
+    <genClasses ecoreClass="restaurant.ecore#//Plats">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute restaurant.ecore#//Plats/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
